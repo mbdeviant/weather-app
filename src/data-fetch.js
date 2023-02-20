@@ -5,19 +5,20 @@ export default async function getWeatherData(location) {
 
     try {
         const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error(`Error fetching the data :${response.status}`);
-        }
+        // if (!response.ok) {
+        //     throw new Error(`Error fetching the data :${response.status}`);
+        // }
         const data = await response.json();
         const weather = {
+            city: data.name,
             desc: data.weather[0].description,
             temp: data.main.temp,
+            temp_feels_like: data.main.feels_like,
             humidity: data.main.humidity,
             wind: data.wind.speed,
         };
         return weather;
     } catch (error) {
-        console.log(error);
-        return null;
+        return error;
     }
 }
