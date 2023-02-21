@@ -1,7 +1,7 @@
 import { HIDDEN_ARTIFACT } from "./biggest-secret-in-the-world";
 
 export default async function getWeatherData(location) {
-    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&APPID=${HIDDEN_ARTIFACT}`;
+    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=${HIDDEN_ARTIFACT}`;
 
     try {
         const response = await fetch(apiUrl);
