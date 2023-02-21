@@ -10,5 +10,12 @@ searchButton.addEventListener("click", () => {
     updateUI(weatherPromise);
 });
 
+searchBar.addEventListener("keypress", (e) => {
+    if (e.key === "Enter") {
+        const weatherPromise = getWeatherData(searchBar.value); //check for empty input & 404
+        updateUI(weatherPromise);
+    }
+});
+
 //default unit is kelvin, display it as celcius first
 // make it convertable to fahrenheit too.
