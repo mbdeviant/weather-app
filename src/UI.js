@@ -23,7 +23,21 @@ function createWeatherCard(data) {
     const container = document.createElement("div");
     container.setAttribute("id", "weather-card");
 
+    const cardHeader = document.createElement("div");
+    cardHeader.classList.add("weather-card-header");
     const cityTitle = document.createElement("h2");
+
+    const c = "°C";
+    const f = "°F";
+    const tempToggleButton = document.createElement("button");
+    tempToggleButton.classList.add("temp-toggle-button");
+    tempToggleButton.textContent = `${c} / ${f} `;
+
+    //create a seperate function to deal with temp conversion
+    //you will modify the data coming to promise, default C
+    //highlight the current by adding removing class to it
+    //in button event listener
+
     const desc = document.createElement("p");
     desc.classList.add("capitalize");
     const temp = document.createElement("p");
@@ -38,7 +52,9 @@ function createWeatherCard(data) {
     humidity.textContent = `Humidity: ${data.humidity}%`;
     wind.textContent = `Wind: ${data.wind}`;
 
-    container.appendChild(cityTitle);
+    cardHeader.appendChild(cityTitle);
+    cardHeader.appendChild(tempToggleButton);
+    container.appendChild(cardHeader);
     container.appendChild(desc);
     container.appendChild(temp);
     container.appendChild(tempFeelsLike);
