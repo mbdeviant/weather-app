@@ -30,8 +30,32 @@ body {
 
 .weather-card-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
+}
+h2 {
+    margin-top: 0px;
+    margin-bottom: 40px;
+}
+
+.temp-toggle {
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    height: 20px;
+    gap: 5px;
+    font-size: 16px;
+    padding: 0px;
+    color: white;
+    background-color: transparent;
+    border: transparent;
+    user-select: none;
+}
+.temp-toggle:hover {
+    cursor: pointer;
+}
+.temp-toggle > p {
+    margin: 0;
 }
 #weather-card {
     font-size: 35px;
@@ -43,6 +67,9 @@ body {
 
 .capitalize {
     text-transform: capitalize;
+}
+.active {
+    font-weight: 700;
 }
 
 button:hover {
