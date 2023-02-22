@@ -27,11 +27,28 @@ function createWeatherCard(data) {
     cardHeader.classList.add("weather-card-header");
     const cityTitle = document.createElement("h2");
 
-    const c = "°C";
-    const f = "°F";
-    const tempToggleButton = document.createElement("button");
-    tempToggleButton.classList.add("temp-toggle-button");
-    tempToggleButton.textContent = `${c} / ${f} `;
+    const celcius = document.createElement("p");
+    celcius.textContent = "°C";
+    celcius.classList.add("active");
+    const brace = document.createElement("p");
+    brace.textContent = "/";
+    const fahrenheit = document.createElement("p");
+    fahrenheit.textContent = "°F";
+
+    const tempToggle = document.createElement("div");
+    tempToggle.classList.add("temp-toggle");
+    tempToggle.appendChild(celcius);
+    tempToggle.appendChild(brace);
+    tempToggle.appendChild(fahrenheit);
+
+    tempToggle.addEventListener("click", () => {
+        celcius.classList.contains("active")
+            ? celcius.classList.remove("active")
+            : celcius.classList.add("active");
+        fahrenheit.classList.contains("active")
+            ? fahrenheit.classList.remove("active")
+            : fahrenheit.classList.add("active");
+    });
 
     //create a seperate function to deal with temp conversion
     //you will modify the data coming to promise, default C
@@ -41,7 +58,9 @@ function createWeatherCard(data) {
     const desc = document.createElement("p");
     desc.classList.add("capitalize");
     const temp = document.createElement("p");
+    temp.setAttribute("id", "temp");
     const tempFeelsLike = document.createElement("p");
+    tempFeelsLike.setAttribute("id", "temp-feels-like");
     const humidity = document.createElement("p");
     const wind = document.createElement("p");
 
@@ -53,7 +72,7 @@ function createWeatherCard(data) {
     wind.textContent = `Wind: ${data.wind}`;
 
     cardHeader.appendChild(cityTitle);
-    cardHeader.appendChild(tempToggleButton);
+    cardHeader.appendChild(tempToggle);
     container.appendChild(cardHeader);
     container.appendChild(desc);
     container.appendChild(temp);
@@ -63,3 +82,5 @@ function createWeatherCard(data) {
 
     return container;
 }
+
+function toggleTempUnit() {}
