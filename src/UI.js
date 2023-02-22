@@ -42,23 +42,28 @@ function createWeatherCard(data) {
     tempToggle.appendChild(fahrenheit);
 
     tempToggle.addEventListener("click", () => {
-        celcius.classList.contains("active")
-            ? celcius.classList.remove("active")
-            : celcius.classList.add("active");
-        fahrenheit.classList.contains("active")
-            ? fahrenheit.classList.remove("active")
-            : fahrenheit.classList.add("active");
-    });
+        if (celcius.classList.contains("active")) {
+            celcius.classList.remove("active");
+            fahrenheit.classList.add("active");
 
-    //create a seperate function to deal with temp conversion
-    //you will modify the data coming to promise, default C
-    //highlight the current by adding removing class to it
-    //in button event listener
+            const tempF = convertToFahrenheit(data.temp.toFixed());
+            temp.textContent = ` Temperature: ${tempF}°F`;
+            const tempFeelslikeF = convertToFahrenheit(
+                data.temp_feels_like.toFixed()
+            );
+            tempFeelsLike.textContent = `Feels like: ${tempFeelslikeF}°F`;
+        } else if (fahrenheit.classList.contains("active")) {
+            fahrenheit.classList.remove("active");
+            celcius.classList.add("active");
+            temp.textContent = `Temperature: ${data.temp.toFixed()}°C`;
+            tempFeelsLike.textContent = `Feels like: ${data.temp_feels_like.toFixed()}°C`;
+        }
+    });
 
     const desc = document.createElement("p");
     desc.classList.add("capitalize");
     const temp = document.createElement("p");
-    temp.setAttribute("id", "temp");
+
     const tempFeelsLike = document.createElement("p");
     tempFeelsLike.setAttribute("id", "temp-feels-like");
     const humidity = document.createElement("p");
@@ -66,8 +71,8 @@ function createWeatherCard(data) {
 
     cityTitle.textContent = `${data.city}`;
     desc.textContent = `${data.desc}`;
-    temp.textContent = ` Temperature: ${data.temp.toFixed()}`;
-    tempFeelsLike.textContent = `Feels like: ${data.temp_feels_like.toFixed()}`;
+    temp.textContent = ` Temperature: ${data.temp.toFixed()}°C`;
+    tempFeelsLike.textContent = `Feels like: ${data.temp_feels_like.toFixed()}°C`;
     humidity.textContent = `Humidity: ${data.humidity}%`;
     wind.textContent = `Wind: ${data.wind}`;
 
@@ -83,4 +88,6 @@ function createWeatherCard(data) {
     return container;
 }
 
-function toggleTempUnit() {}
+function convertToFahrenheit(temp) {
+    return (temp * 9) / 5 + 32;
+}
