@@ -16,6 +16,3 @@ searchBar.addEventListener("keypress", (e) => {
         updateUI(weatherPromise);
     }
 });
-
-//default unit is kelvin, display it as celcius first
-// make it convertable to fahrenheit too.
