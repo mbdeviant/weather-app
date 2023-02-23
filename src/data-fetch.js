@@ -5,9 +5,9 @@ export default async function getWeatherData(location) {
 
     try {
         const response = await fetch(apiUrl);
-        // if (!response.ok) {
-        //     throw new Error(`Error fetching the data :${response.status}`);
-        // }
+        if (!response.ok) {
+            throw new Error(`Error fetching the data :${response.status}`);
+        }
         const data = await response.json();
         const weather = {
             city: data.name,
@@ -19,6 +19,6 @@ export default async function getWeatherData(location) {
         };
         return weather;
     } catch (error) {
-        return error;
+        return console.log("city not found");
     }
 }
