@@ -22,6 +22,11 @@ body {
 #searchbar:focus {
     outline: none;
 }
+#error-message {
+    height: 20px;
+    color: white;
+    margin-top: 8px;
+}
 .weather-container {
     display: flex;
     align-self: flex-start;
