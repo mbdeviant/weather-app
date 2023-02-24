@@ -69,6 +69,8 @@ function createWeatherCard(data) {
     humidity.textContent = `Humidity: ${data.humidity}%`;
     wind.textContent = `Wind: ${data.wind}`;
 
+    setBackground(data.desc);
+
     cardHeader.appendChild(cityTitle);
     cardHeader.appendChild(tempToggle);
     container.appendChild(cardHeader);
@@ -83,6 +85,24 @@ function createWeatherCard(data) {
 
 function convertToFahrenheit(temp) {
     return (temp * 9) / 5 + 32;
+}
+
+function setBackground(weather) {
+    if (weather === "clear sky")
+        document.body.style.backgroundImage =
+            "url('../dist/assets/clearsky.jpg')";
+    if (weather.includes("clouds"))
+        document.body.style.backgroundImage =
+            "url('../dist/assets/clouds.jpg')";
+    if (weather.includes("rain"))
+        document.body.style.backgroundImage = "url('../dist/assets/rain.jpg')";
+    if (weather === "snow")
+        document.body.style.backgroundImage = "url('../dist/assets/snow.jpg')";
+    if (weather === "mist")
+        document.body.style.backgroundImage = "url('../dist/assets/mist.jpg')";
+    if (weather === "thunderstorm")
+        document.body.style.backgroundImage =
+            "url('../dist/assets/thunderstorm.jpg')";
 }
 
 export function displayErrorMessage() {
