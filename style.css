@@ -1,13 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 html,
 body {
     background-color: #171717;
-    font-family: sans-serif;
     width: 100%;
     height: 100%;
     padding: 0;
     margin: 0 auto;
 }
 body {
+    font-family: "Poppins";
     background-image: url("/dist/assets/background.jpg");
     background-repeat: no-repeat;
     background-position: center center;
@@ -22,24 +24,45 @@ body {
     justify-content: flex-start;
 }
 .search-container {
+    display: flex;
     align-self: flex-start;
-    padding: 50px 0px 10px 50px;
+    margin-left: 20px;
+    padding-top: 50px;
+    padding-bottom: 8px;
+    width: 450px;
+}
+#searchbar {
+    width: 420px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px 0 0 8px;
 }
 
 #searchbar:focus {
     outline: none;
 }
+#search-button {
+    padding: 10px;
+    border: none;
+    border-radius: 0 8px 8px 0;
+}
+
 #error-message {
+    width: 434px;
     height: 20px;
-    color: white;
-    margin-top: 8px;
+    color: red;
+    padding: 0 8px 8px 8px;
+    margin-left: 20px;
+    margin-bottom: 8px;
+    border-radius: 8px;
 }
 .weather-container {
     display: flex;
     align-self: flex-start;
-    padding: 30px 0px 0px 30px;
+    padding: 15px 0px 0px 30px;
     margin-left: 20px;
-    border-radius: 12px;
+    border-radius: 8px;
+    width: 420px;
     background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -47,10 +70,10 @@ body {
     display: flex;
     align-items: flex-start;
     justify-content: space-between;
+    height: fit-content;
 }
 h2 {
-    margin-top: 0px;
-    margin-bottom: 40px;
+    margin: 0;
 }
 
 .temp-toggle {
@@ -61,6 +84,7 @@ h2 {
     gap: 5px;
     font-size: 16px;
     padding: 0px;
+    margin-right: 14px;
     color: white;
     background-color: transparent;
     border: transparent;
@@ -77,13 +101,14 @@ h2 {
     color: white;
     align-self: center;
     width: 420px;
-    padding: 14px 14px 14px 0px;
+    padding: 14px 0px;
 }
 
 .capitalize {
     text-transform: capitalize;
 }
 .active {
+    color: wheat;
     font-weight: 700;
 }
 
@@ -112,4 +137,26 @@ button:hover {
     -moz-transform: rotate(45deg);
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
+}
+@media (max-width: 500px) {
+    .weather-container {
+        align-self: center;
+        width: 420px;
+        margin: 0;
+    }
+    .search-container {
+        width: 420px;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        align-self: center;
+    }
+    #searchbar {
+        width: 80%;
+    }
+    #error-message {
+        width: 80%;
+        margin-left: 0px;
+        align-self: center;
+    }
 }
