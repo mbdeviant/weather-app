@@ -1,13 +1,11 @@
 import { HIDDEN_ARTIFACT } from "./biggest-secret-in-the-world";
+import { displayErrorMessage } from "./UI";
 
 export default async function getWeatherData(location) {
     const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${location}&units=metric&APPID=${HIDDEN_ARTIFACT}`;
+    const response = await fetch(apiUrl, { mode: "cors" });
 
     try {
-        const response = await fetch(apiUrl);
-        if (!response.ok) {
-            throw new Error(`Error fetching the data :${response.status}`);
-        }
         const data = await response.json();
         const weather = {
             city: data.name,
@@ -18,7 +16,8 @@ export default async function getWeatherData(location) {
             wind: data.wind.speed,
         };
         return weather;
-    } catch (error) {
-        return console.log("city not found");
+    } catch (err) {
+        displayErrorMessage();
+        return;
     }
 }
