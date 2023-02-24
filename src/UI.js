@@ -110,12 +110,17 @@ export function displayErrorMessage() {
     const errorMessage = document.getElementById("error-message");
 
     if (searchBar.value.trim() === "") {
-        errorMessage.textContent = "no empty input";
-    } else errorMessage.textContent = "city not found";
+        errorMessage.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+        errorMessage.textContent = "Please enter a city name!";
+    } else {
+        errorMessage.style.backgroundColor = "rgba(0, 0, 0, 0.7)";
+        errorMessage.textContent = "Location was not found";
+    }
 
     function clearErrorMessages() {
         errorMessage.textContent = "";
+        errorMessage.style.backgroundColor = "transparent";
         console.clear();
     }
-    setTimeout(clearErrorMessages, 3000);
+    setTimeout(clearErrorMessages, 2500);
 }
