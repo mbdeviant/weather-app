@@ -4,17 +4,19 @@ import updateUI from "./UI";
 const searchBar = document.getElementById("searchbar");
 const searchButton = document.getElementById("search-button");
 
+document.addEventListener("DOMContentLoaded", () => {
+    const initialCity = getWeatherData("izmir");
+    updateUI(initialCity);
+});
+
 searchButton.addEventListener("click", () => {
-    console.log(searchBar.value);
-    const weatherPromise = getWeatherData(searchBar.value); //check for empty input & 404
+    const weatherPromise = getWeatherData(searchBar.value);
     updateUI(weatherPromise);
-    searchBar.value = "";
 });
 
 searchBar.addEventListener("keypress", (e) => {
     if (e.key === "Enter") {
-        const weatherPromise = getWeatherData(searchBar.value); //check for empty input & 404
+        const weatherPromise = getWeatherData(searchBar.value);
         updateUI(weatherPromise);
-        searchBar.value = "";
     }
 });
