@@ -1,15 +1,8 @@
 export default async function updateUI(promise) {
     const weatherContainer = document.getElementById("weather-container");
-    console.log(promise);
     promise.then(function (weatherData) {
-        console.log(
-            weatherData.city,
-            weatherData.desc,
-            weatherData.temp.toFixed(),
-            weatherData.temp_feels_like.toFixed(),
-            weatherData.wind,
-            weatherData.humidity
-        );
+        if (!weatherData) return;
+
         if (weatherContainer.querySelector("#weather-card")) {
             const currentCard = weatherContainer.querySelector("#weather-card");
             weatherContainer.removeChild(currentCard);
@@ -90,4 +83,19 @@ function createWeatherCard(data) {
 
 function convertToFahrenheit(temp) {
     return (temp * 9) / 5 + 32;
+}
+
+export function displayErrorMessage() {
+    const searchBar = document.getElementById("searchbar");
+    const errorMessage = document.getElementById("error-message");
+
+    if (searchBar.value.trim() === "") {
+        errorMessage.textContent = "no empty input";
+    } else errorMessage.textContent = "city not found";
+
+    function clearErrorMessages() {
+        errorMessage.textContent = "";
+        console.clear();
+    }
+    setTimeout(clearErrorMessages, 3000);
 }
