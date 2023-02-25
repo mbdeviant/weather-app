@@ -96,7 +96,7 @@ function setBackground(weather) {
             "url('../dist/assets/clouds.jpg')";
     if (weather.includes("rain"))
         document.body.style.backgroundImage = "url('../dist/assets/rain.jpg')";
-    if (weather === "snow")
+    if (weather.includes("snow"))
         document.body.style.backgroundImage = "url('../dist/assets/snow.jpg')";
     if (weather === "mist")
         document.body.style.backgroundImage = "url('../dist/assets/mist.jpg')";
