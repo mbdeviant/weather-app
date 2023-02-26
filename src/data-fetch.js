@@ -1,4 +1,4 @@
-import { HIDDEN_ARTIFACT } from "./biggest-secret-in-the-world";
+import { HIDDEN_ARTIFACT } from "./biggest-secret-in-the-world"; //not much of a secret, use dotenv next time
 import { displayErrorMessage } from "./UI";
 
 export default async function getWeatherData(location) {
