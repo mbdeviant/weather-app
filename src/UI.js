@@ -1,5 +1,7 @@
 export default async function updateUI(promise) {
     const weatherContainer = document.getElementById("weather-container");
+    const searchBar = document.getElementById("searchbar");
+
     promise.then(function (weatherData) {
         if (!weatherData) return;
 
@@ -9,6 +11,7 @@ export default async function updateUI(promise) {
         }
         const weatherElement = createWeatherCard(weatherData);
         weatherContainer.appendChild(weatherElement);
+        searchBar.value = "";
     });
 }
 
