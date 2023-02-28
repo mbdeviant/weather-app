@@ -92,20 +92,17 @@ function convertToFahrenheit(temp) {
 
 function setBackground(weather) {
     if (weather === "clear sky")
-        document.body.style.backgroundImage =
-            "url('../dist/assets/clearsky.jpg')";
+        document.body.style.backgroundImage = "url('assets/clearsky.jpg')";
     if (weather.includes("clouds"))
-        document.body.style.backgroundImage =
-            "url('../dist/assets/clouds.jpg')";
+        document.body.style.backgroundImage = "url('assets/clouds.jpg')";
     if (weather.includes("rain"))
-        document.body.style.backgroundImage = "url('../dist/assets/rain.jpg')";
+        document.body.style.backgroundImage = "url('assets/rain.jpg')";
     if (weather.includes("snow"))
-        document.body.style.backgroundImage = "url('../dist/assets/snow.jpg')";
+        document.body.style.backgroundImage = "url('assets/snow.jpg')";
     if (weather === "mist")
-        document.body.style.backgroundImage = "url('../dist/assets/mist.jpg')";
+        document.body.style.backgroundImage = "url('assets/mist.jpg')";
     if (weather === "thunderstorm")
-        document.body.style.backgroundImage =
-            "url('../dist/assets/thunderstorm.jpg')";
+        document.body.style.backgroundImage = "url('assets/thunderstorm.jpg')";
 }
 
 export function displayErrorMessage() {
