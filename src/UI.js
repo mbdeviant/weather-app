@@ -70,7 +70,7 @@ function createWeatherCard(data) {
     temp.textContent = ` Temperature: ${data.temp.toFixed()}°C`;
     tempFeelsLike.textContent = `Feels like: ${data.temp_feels_like.toFixed()}°C`;
     humidity.textContent = `Humidity: ${data.humidity}%`;
-    wind.textContent = `Wind: ${data.wind}`;
+    wind.textContent = `Wind: ${data.wind} m/s`;
 
     setBackground(data.desc);
 
