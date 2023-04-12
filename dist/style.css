@@ -137,6 +137,30 @@ button:hover {
     -ms-transform: rotate(45deg);
     -o-transform: rotate(45deg);
 }
+.footer {
+    left: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 100%;
+    padding-top: 4px;
+    gap: 4px;
+    background-color: transparent;
+    color: white;
+    font-family: monospace;
+    font-style: italic;
+    user-select: none;
+}
+.footer img {
+    width: 17px;
+    height: 17px;
+}
+.footer p {
+    padding: 0;
+    margin: 0;
+}
 @media (max-width: 500px) {
     .weather-container {
         align-self: center;
