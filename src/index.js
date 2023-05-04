@@ -5,7 +5,7 @@ const searchBar = document.getElementById("searchbar");
 const searchButton = document.getElementById("search-button");
 
 document.addEventListener("DOMContentLoaded", () => {
-    const initialCity = getWeatherData("Antalya");
+    const initialCity = getWeatherData("Ortahisar");
     updateUI(initialCity);
 });
 
