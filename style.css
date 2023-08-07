@@ -28,7 +28,7 @@ body {
   margin-left: 20px;
   padding-top: 50px;
   padding-bottom: 8px;
-  width: 450px;
+  max-width: 450px;
 }
 #searchbar {
   width: 420px;
@@ -47,7 +47,7 @@ body {
 }
 
 #error-message {
-  width: 434px;
+  max-width: 434px;
   height: 20px;
   color: red;
   padding: 0 8px 8px 8px;
@@ -61,7 +61,7 @@ body {
   padding: 15px 0px 0px 30px;
   margin-left: 20px;
   border-radius: 8px;
-  width: 420px;
+  max-width: 420px;
   background-color: rgba(0, 0, 0, 0.5);
 }
 
@@ -170,11 +170,29 @@ button:hover {
 @media (max-width: 500px) {
   .weather-container {
     align-self: center;
-    width: 420px;
+    justify-content: center;
+    width: 70%;
     margin: 0;
+    padding: 0;
   }
+  #weather-card {
+    width: 70%;
+  }
+  .weather-card-header,
+  .weather-info {
+    font-size: 25px;
+  }
+  .weather-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .city-title {
+    font-size: 45px;
+  }
+
   .search-container {
-    width: 420px;
+    width: 80%;
     display: flex;
     justify-content: center;
     margin: 0;
