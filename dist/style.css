@@ -177,18 +177,24 @@ button:hover {
   }
   #weather-card {
     width: 70%;
+    padding: 0px;
   }
   .weather-card-header,
   .weather-info {
-    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    margin: 20px 0px;
   }
   .weather-card-header {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 10px;
   }
   .city-title {
-    font-size: 45px;
+    font-size: 38px;
   }
 
   .search-container {
