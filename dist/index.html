@@ -1,36 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="main.js" defer></script>
-        <link rel="stylesheet" href="style.css" />
-        <link rel="icon" type="image/png" href="assets/favicon.png" />
-        <title>WeatherApp</title>
-    </head>
-    <body>
-        <div class="main-container">
-            <div class="search-container">
-                <input
-                    type="text"
-                    id="searchbar"
-                    name="searchbar"
-                    placeholder="Weather in your city"
-                    spellcheck="false"
-                />
-                <button type="submit" id="search-button">
-                    <span class="ico ico-mglass"></span>
-                </button>
-            </div>
-            <div id="error-message"></div>
-            <div class="weather-container" id="weather-container"></div>
-            <footer class="footer">
-                <p>deviant</p>
-                <a href="https://github.com/mbdeviant"
-                    ><img src="assets/github-mark-white.png" alt="githublogo"
-                /></a>
-            </footer>
-        </div>
-    </body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="main.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" type="image/png" href="assets/favicon.png" />
+    <title>WeatherApp</title>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="search-container">
+        <input
+          type="text"
+          id="searchbar"
+          name="searchbar"
+          placeholder="Weather in your city"
+          spellcheck="false"
+          aria-label="search location"
+        />
+        <button type="submit" id="search-button" aria-label="search">
+          <span class="ico ico-mglass"></span>
+        </button>
+      </div>
+      <div id="error-message"></div>
+      <div class="weather-container" id="weather-container"></div>
+      <footer class="footer">
+        <p>deviant</p>
+        <a href="https://github.com/mbdeviant"
+          ><img src="assets/github-mark-white.png" alt="githublogo"
+        /></a>
+      </footer>
+    </div>
+  </body>
 </html>
