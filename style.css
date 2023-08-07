@@ -2,184 +2,190 @@
 
 html,
 body {
-    background-color: #171717;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0 auto;
+  background-color: #171717;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0 auto;
 }
 body {
-    font-family: "Poppins";
-    background-repeat: no-repeat;
-    background-position: center center;
-    background-size: cover;
-    background-attachment: fixed;
+  font-family: "Poppins";
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  background-attachment: fixed;
 }
 .main-container {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 .search-container {
-    display: flex;
-    align-self: flex-start;
-    margin-left: 20px;
-    padding-top: 50px;
-    padding-bottom: 8px;
-    width: 450px;
+  display: flex;
+  align-self: flex-start;
+  margin-left: 20px;
+  padding-top: 50px;
+  padding-bottom: 8px;
+  width: 450px;
 }
 #searchbar {
-    width: 420px;
-    padding: 10px;
-    border: none;
-    border-radius: 8px 0 0 8px;
+  width: 420px;
+  padding: 10px;
+  border: none;
+  border-radius: 8px 0 0 8px;
 }
 
 #searchbar:focus {
-    outline: none;
+  outline: none;
 }
 #search-button {
-    padding: 10px;
-    border: none;
-    border-radius: 0 8px 8px 0;
+  padding: 10px;
+  border: none;
+  border-radius: 0 8px 8px 0;
 }
 
 #error-message {
-    width: 434px;
-    height: 20px;
-    color: red;
-    padding: 0 8px 8px 8px;
-    margin-left: 20px;
-    margin-bottom: 8px;
-    border-radius: 8px;
+  width: 434px;
+  height: 20px;
+  color: red;
+  padding: 0 8px 8px 8px;
+  margin-left: 20px;
+  margin-bottom: 8px;
+  border-radius: 8px;
 }
 .weather-container {
-    display: flex;
-    align-self: flex-start;
-    padding: 15px 0px 0px 30px;
-    margin-left: 20px;
-    border-radius: 8px;
-    width: 420px;
-    background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-self: flex-start;
+  padding: 15px 0px 0px 30px;
+  margin-left: 20px;
+  border-radius: 8px;
+  width: 420px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .weather-card-header {
-    display: flex;
-    align-items: flex-start;
-    justify-content: space-between;
-    height: fit-content;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  height: fit-content;
 }
-h2 {
-    margin: 0;
+.city-title {
+  font-size: 52px;
+  margin: 0;
+}
+.weather-info {
+  font-size: 35px;
+  margin: 35px 0;
+  font-weight: 400;
 }
 
 .temp-toggle {
-    display: flex;
-    align-items: center;
-    width: fit-content;
-    height: 20px;
-    gap: 5px;
-    font-size: 16px;
-    padding: 0px;
-    margin-right: 14px;
-    color: white;
-    background-color: transparent;
-    border: transparent;
-    user-select: none;
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  height: 20px;
+  gap: 5px;
+  font-size: 16px;
+  padding: 0px;
+  margin-right: 14px;
+  color: white;
+  background-color: transparent;
+  border: transparent;
+  user-select: none;
 }
 .temp-toggle:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 .temp-toggle > p {
-    margin: 0;
+  margin: 0;
 }
 #weather-card {
-    font-size: 35px;
-    color: white;
-    align-self: center;
-    width: 420px;
-    padding: 14px 0px;
+  font-size: 35px;
+  color: white;
+  align-self: center;
+  width: 420px;
+  padding: 14px 0px;
 }
 
 .capitalize {
-    text-transform: capitalize;
+  text-transform: capitalize;
 }
 .active {
-    color: wheat;
-    font-weight: 700;
+  color: wheat;
+  font-weight: 700;
 }
 
 button:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 .ico-mglass {
-    position: relative;
-    display: inline-block;
-    background: #fff;
-    border-radius: 30px;
-    height: 6px;
-    width: 6px;
-    border: 2px solid #888;
+  position: relative;
+  display: inline-block;
+  background: #fff;
+  border-radius: 30px;
+  height: 6px;
+  width: 6px;
+  border: 2px solid #888;
 }
 .ico-mglass:after {
-    content: "";
-    height: 2px;
-    width: 6px;
-    background: #888;
-    position: absolute;
-    top: 7px;
-    left: 5px;
-    transform: rotate(45deg);
-    -webkit-transform: rotate(45deg);
-    -moz-transform: rotate(45deg);
-    -ms-transform: rotate(45deg);
-    -o-transform: rotate(45deg);
+  content: "";
+  height: 2px;
+  width: 6px;
+  background: #888;
+  position: absolute;
+  top: 7px;
+  left: 5px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  -moz-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  -o-transform: rotate(45deg);
 }
 .footer {
-    left: 0;
-    bottom: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
-    width: 100%;
-    padding-top: 4px;
-    gap: 4px;
-    background-color: transparent;
-    color: white;
-    font-family: monospace;
-    font-style: italic;
-    user-select: none;
+  left: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  padding-top: 4px;
+  gap: 4px;
+  background-color: transparent;
+  color: white;
+  font-family: monospace;
+  font-style: italic;
+  user-select: none;
 }
 .footer img {
-    width: 17px;
-    height: 17px;
+  width: 17px;
+  height: 17px;
 }
 .footer p {
-    padding: 0;
-    margin: 0;
+  padding: 0;
+  margin: 0;
 }
 @media (max-width: 500px) {
-    .weather-container {
-        align-self: center;
-        width: 420px;
-        margin: 0;
-    }
-    .search-container {
-        width: 420px;
-        display: flex;
-        justify-content: center;
-        margin: 0;
-        align-self: center;
-    }
-    #searchbar {
-        width: 80%;
-    }
-    #error-message {
-        width: 80%;
-        margin-left: 0px;
-        align-self: center;
-    }
+  .weather-container {
+    align-self: center;
+    width: 420px;
+    margin: 0;
+  }
+  .search-container {
+    width: 420px;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    align-self: center;
+  }
+  #searchbar {
+    width: 80%;
+  }
+  #error-message {
+    width: 80%;
+    margin-left: 0px;
+    align-self: center;
+  }
 }
