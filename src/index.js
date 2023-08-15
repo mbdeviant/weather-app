@@ -5,18 +5,18 @@ const searchBar = document.getElementById("searchbar");
 const searchButton = document.getElementById("search-button");
 
 document.addEventListener("DOMContentLoaded", () => {
-    const initialCity = getWeatherData("Ortahisar");
-    updateUI(initialCity);
+  const initialCity = getWeatherData("Eskişehir");
+  updateUI(initialCity);
 });
 
 searchButton.addEventListener("click", () => {
-    const weatherPromise = getWeatherData(searchBar.value);
-    updateUI(weatherPromise);
+  const weatherPromise = getWeatherData(searchBar.value);
+  updateUI(weatherPromise);
 });
 
 searchBar.addEventListener("keypress", (e) => {
-    if (e.key === "Enter") {
-        const weatherPromise = getWeatherData(searchBar.value);
-        updateUI(weatherPromise);
-    }
+  if (e.key === "Enter") {
+    const weatherPromise = getWeatherData(searchBar.value);
+    updateUI(weatherPromise);
+  }
 });
