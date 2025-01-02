@@ -167,6 +167,10 @@ button:hover {
   padding: 0;
   margin: 0;
 }
+a {
+  text-decoration: none;
+  color: rgba(128, 128, 128, 0.582);
+}
 @media (max-width: 500px) {
   .weather-container {
     align-self: center;
