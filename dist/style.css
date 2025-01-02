@@ -154,7 +154,7 @@ button:hover {
   padding-top: 4px;
   gap: 4px;
   background-color: transparent;
-  color: white;
+  color: rgba(255, 255, 255, 0.432);
   font-family: monospace;
   font-style: italic;
   user-select: none;
